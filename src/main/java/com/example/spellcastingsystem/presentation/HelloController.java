@@ -1,4 +1,4 @@
-package com.example.spellcastingsystem;
+package com.example.spellcastingsystem.presentation;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
