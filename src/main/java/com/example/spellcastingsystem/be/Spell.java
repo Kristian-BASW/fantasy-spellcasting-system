@@ -1,9 +1,9 @@
 package com.example.spellcastingsystem.be;
 
 public class Spell {
-    String name;
-    int cost;
-    int damage;
+    public String name;
+    public int cost;
+    public int damage;
 
     public Spell(String name, int cost, int damage) {
         this.name = name;
