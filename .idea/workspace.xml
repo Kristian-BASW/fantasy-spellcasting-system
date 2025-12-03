@@ -5,24 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a699452-db3d-4fcc-a54c-d78d848a50a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Spell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Wizard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/WizardType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/bll/WizardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/bll/WizardTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/dal/ICrudDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/dal/implementation/WizardDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/dal/implementation/WizardTypeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/controllers/WizardGameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/models/WizardCreateModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/spellcastingsystem/create-wizard-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/spellcastingsystem/wizard-game-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/WizardApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Pool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Pool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Spell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Wizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/WizardType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/WizardType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/controllers/WizardCreateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/spellcastingsystem/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/spellcastingsystem/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/spellcastingsystem/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spellcastingsystem/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -34,12 +58,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Unnamed.executor": "Run",
+    "Application.WizardApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feat/create-a-wizard-with-a-type",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/kristianurup/Projects/fantasy-spellcasting-system",
     "node.js.detected.package.eslint": "true",
@@ -47,15 +72,16 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.editor",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="WizardApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/Library/Java/JavaVirtualMachines/openjdk-25.0.1/Contents/Home" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.example.spellcastingsystem.HelloApplication" />
+      <option name="MAIN_CLASS_NAME" value="com.example.spellcastingsystem.WizardApplication" />
       <module name="spellcasting-system" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem" />
       <method v="2">
@@ -91,11 +117,17 @@
       <updated>1764680301496</updated>
       <workItem from="1764680302665" duration="33000" />
       <workItem from="1764680600822" duration="441000" />
-      <workItem from="1764681676275" duration="382000" />
+      <workItem from="1764681676275" duration="4268000" />
+      <workItem from="1764747105257" duration="4236000" />
+      <workItem from="1764751422409" duration="6810000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
