@@ -4,6 +4,8 @@ import com.example.spellcastingsystem.be.Wizard;
 import com.example.spellcastingsystem.dal.ICrudDao;
 import com.example.spellcastingsystem.dal.implementation.WizardDao;
 
+import java.util.List;
+
 public class WizardService {
     private ICrudDao<Wizard> _wizardDao;
     public WizardService(){
@@ -22,6 +24,10 @@ public class WizardService {
     }
     public void delete(int id){
         this._wizardDao.delete(id);
+    }
+
+    public List<Wizard> getWizards(){
+        return _wizardDao.getAll();
     }
 
     public void levelUp(int id){
