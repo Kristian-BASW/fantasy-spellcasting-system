@@ -10,4 +10,11 @@ public class Spell {
         this.cost = cost;
         this.damage = damage;
     }
+
+    public static class FieldNames {
+        public static final String ID = "id";
+        public static final String NAME = "name";
+        public static final String COST = "cost";
+        public static final String DAMAGE = "damage";
+    }
 }

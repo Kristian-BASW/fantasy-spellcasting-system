@@ -6,6 +6,7 @@ module com.example.spellcastingsystem {
     requires org.kordamp.bootstrapfx.core;
     requires javafx.base;
     requires javafx.graphics;
+    requires java.sql;
 
     opens com.example.spellcastingsystem to javafx.fxml;
     exports com.example.spellcastingsystem;

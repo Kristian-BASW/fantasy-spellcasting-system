@@ -1,5 +1,6 @@
 package com.example.spellcastingsystem;
 
+import com.example.spellcastingsystem.dal.implementation.DatabaseContext;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
