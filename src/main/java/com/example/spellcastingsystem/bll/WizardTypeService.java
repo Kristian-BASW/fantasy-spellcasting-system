@@ -23,8 +23,9 @@ public class WizardTypeService {
         return dao.getAll();
     }
 
-    public List<String> getNames(){
-        return dao.getAll().stream().map(x -> x.name).toList();
+    public List<String> getNames() {
+        var list = dao.getAll();
+        return list.stream().map(x -> x.name).toList();
     }
 
 }

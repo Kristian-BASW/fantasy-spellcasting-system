@@ -1,5 +1,6 @@
 package com.example.spellcastingsystem.dal;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface ICrudDao<T> {

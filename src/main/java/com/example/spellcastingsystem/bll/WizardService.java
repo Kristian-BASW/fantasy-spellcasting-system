@@ -4,11 +4,17 @@ import com.example.spellcastingsystem.be.Wizard;
 import com.example.spellcastingsystem.dal.ICrudDao;
 import com.example.spellcastingsystem.dal.implementation.WizardDao;
 
+import java.sql.SQLException;
+import java.util.List;
+
+import static java.lang.IO.println;
+
 public class WizardService {
-    private ICrudDao<Wizard> _wizardDao;
+    private final ICrudDao<Wizard> _wizardDao;
     public WizardService(){
          _wizardDao = new WizardDao();
     }
+
     public Wizard getWizard(int id){
         return _wizardDao.get(id);
     }
@@ -24,7 +30,11 @@ public class WizardService {
         this._wizardDao.delete(id);
     }
 
-    public void levelUp(int id){
+    public List<Wizard> getWizards(){
+        return _wizardDao.getAll();
+    }
+
+    public void levelUp(int id) {
         var wizard = this._wizardDao.get(id);
         wizard.level += 1;
         this._wizardDao.update(wizard);

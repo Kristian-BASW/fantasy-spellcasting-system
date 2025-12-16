@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" />
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.spellcastingsystem.presentation.controllers.WizardGameController">
+  <items>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label prefHeight="19.0" prefWidth="56.0" text="Wizards" />
+            <TableView fx:id="wizardsTable" prefHeight="398.0" prefWidth="175.0">
+              <columns>
+                <TableColumn fx:id="wizardNameColumn" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="wizardLevelColumn" prefWidth="75.0" text="Level" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+  </items>
+</SplitPane>
