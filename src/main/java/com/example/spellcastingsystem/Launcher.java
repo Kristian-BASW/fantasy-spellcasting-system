@@ -11,7 +11,7 @@ import static java.lang.IO.println;
 public class Launcher {
     public static void main(String[] args) {
         try {
-            DatabaseContext.checkExistence();
+            new DatabaseContext().checkExistence();
         } catch (SQLException e) {
             println("SQL creation failed");
         }

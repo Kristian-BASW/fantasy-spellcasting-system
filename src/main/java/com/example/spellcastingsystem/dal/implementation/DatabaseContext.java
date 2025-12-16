@@ -11,79 +11,64 @@ import java.util.Objects;
 
 public class DatabaseContext {
 
-    public static Connection connect(){
-        var url = "jdbc:sqlite:wizard_games.db";
-        try {
+    private static Connection _connection;
+
+    /**
+     * Gives the connection to the database
+     * If it is null or closed it creates a new connection
+     * @return Connection to the database
+     * @throws SQLException
+     */
+    public static synchronized Connection getConnection() throws SQLException {
+        if (_connection == null || _connection.isClosed()) {
             System.out.println("Connection to SQLite has been established.");
-            return DriverManager.getConnection(DatabaseConstants.DATABASE_NAME);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            _connection = DriverManager.getConnection(DatabaseConstants.DATABASE_NAME);
         }
-        return null;
+
+        return _connection;
     }
 
-    public static void checkExistence() throws SQLException {
-        DatabaseMetaData dbm = Objects.requireNonNull(connect()).getMetaData();
+    /**
+     * Checks if the table with the given tableName is created, if not
+     * then it creates it
+     * @param tableName TableName to check
+     * @return true if created
+     * @throws SQLException
+     */
+    public boolean checkTableExistence(String tableName) throws SQLException {
+        DatabaseMetaData dbm = Objects.requireNonNull(getConnection()).getMetaData();
 
-        ResultSet wizardTable = dbm.getTables(null, null, DatabaseConstants.WIZARDS_TABLE_NAME, null);
-        if(wizardTable.next()){
-            var sql = "CREATE TABLE IF NOT EXISTS "+ DatabaseConstants.WIZARDS_TABLE_NAME + " ("
-                    + Wizard.FieldNames.ID +" INTEGER PRIMARY KEY,"
-                    + Wizard.FieldNames.NAME + " nvarchar(200) NOT NULL,"
-                    + Wizard.FieldNames.LEVEL +" INTEGER NOT NULL,"
-                    + Wizard.FieldNames.EXPERIENCE + " INTEGER NOT NULL,"
-                    + Wizard.FieldNames.WIZARD_TYPE_ID + " INTEGER NOT NULL,"
-                    + ");";
+        ResultSet wizardTable = dbm.getTables(null, null, tableName, null);
+        return wizardTable.next();
+    }
+
+    /**
+     * Checks if all of the tables are created
+     * (should be manipulated if more tables should be added)
+     * @throws SQLException
+     */
+    public void checkExistence() throws SQLException {
+        // Creating table for Wizard
+        createTableIfNotExist(DatabaseConstants.WIZARDS_TABLE_NAME, Wizard.TABLE_CREATE);
+
+        // Creating table for Wizard Types
+        createTableIfNotExist(DatabaseConstants.WIZARD_TYPES_TABLE_NAME, WizardType.TABLE_CREATE);
+
+        // Creating table for Spells
+        createTableIfNotExist(DatabaseConstants.SPELLS_TABLE_NAME, Spell.TABLE_CREATE);
+
+        // Creating table for Pools
+        createTableIfNotExist(DatabaseConstants.POOLS_TABLE_NAME, Pool.TABLE_CREATE);
+
+    }
+
+    private void createTableIfNotExist(String tableName, String createQuery) throws SQLException {
+        if(checkTableExistence(tableName) == false){
             try {
-                Objects.requireNonNull(DatabaseContext.connect()).createStatement().execute(sql);
+                Objects.requireNonNull(getConnection()).createStatement().execute(createQuery);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }
-        ResultSet wizardTypeTable = dbm.getTables(null, null, DatabaseConstants.WIZARD_TYPES_TABLE_NAME, null);
-        if(wizardTypeTable.next()){
-            var sql = "CREATE TABLE IF NOT EXISTS " + DatabaseConstants.WIZARD_TYPES_TABLE_NAME + " ("
-                    + WizardType.FieldNames.ID + " INTEGER PRIMARY KEY,"
-                    + WizardType.FieldNames.NAME + " nvarchar(200) NOT NULL,"
-                    + ");";
-            try {
-                Objects.requireNonNull(DatabaseContext.connect()).createStatement().execute(sql);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-        ResultSet spellsTable = dbm.getTables(null, null, DatabaseConstants.SPELLS_TABLE_NAME, null);
-        if(spellsTable.next()){
-            var sql = "CREATE TABLE IF NOT EXISTS "+ DatabaseConstants.SPELLS_TABLE_NAME +" ("
-                    + Spell.FieldNames.ID +" INTEGER PRIMARY KEY,"
-                    + Spell.FieldNames.NAME +" nvarchar(200) NOT NULL,"
-                    + Spell.FieldNames.COST +" INTEGER NOT NULL,"
-                    + Spell.FieldNames.DAMAGE +" INTEGER NOT NULL,"
-                    + ");";
-            try {
-                Objects.requireNonNull(DatabaseContext.connect()).createStatement().execute(sql);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-        ResultSet poolsTable = dbm.getTables(null, null, DatabaseConstants.POOLS_TABLE_NAME, null);
-        if(poolsTable.next()){
-            var sql = "CREATE TABLE IF NOT EXISTS "+ DatabaseConstants.POOLS_TABLE_NAME +" ("
-                    + Pool.FieldNames.ID + " INTEGER PRIMARY KEY,"
-                    + Pool.FieldNames.NAME + " nvarchar(200) NOT NULL,"
-                    + Pool.FieldNames.FULL_POINTS + " INTEGER NOT NULL,"
-                    + Pool.FieldNames.CURRENT_POINTS + " INTEGER NOT NULL,"
-                    + Pool.FieldNames.WIZARD_ID +" INTEGER NOT NULL,"
-                    + Pool.FieldNames.POOL_TYPE + "NVARCHAR(30) NOT NULL"
-                    + ");";
-            try {
-                Objects.requireNonNull(DatabaseContext.connect()).createStatement().execute(sql);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
     }
 }

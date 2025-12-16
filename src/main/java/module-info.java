@@ -12,4 +12,5 @@ module com.example.spellcastingsystem {
     exports com.example.spellcastingsystem;
     exports com.example.spellcastingsystem.presentation.controllers;
     opens com.example.spellcastingsystem.presentation.controllers to javafx.fxml;
+    opens com.example.spellcastingsystem.presentation to javafx.base;
 }
