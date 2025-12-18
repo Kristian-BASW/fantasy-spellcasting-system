@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.spellcastingsystem.presentation.controllers.WizardCreateController">
     <Label text="Name" />
     <TextField fx:id="wizardNameTextField" />
+   <Label fx:id="errorLabel" text="The wizard name you have chosen is already used by another wizard, please rename your wizard" textFill="#bf0404">
+      <font>
+         <Font size="11.0" />
+      </font>
+      <VBox.margin>
+         <Insets bottom="5.0" />
+      </VBox.margin>
+   </Label>
    <Label text="Wizard type" />
    <ComboBox fx:id="wizardTypeComboBox" prefWidth="150.0" />
     <ButtonBar prefHeight="40.0" prefWidth="200.0" style="-fx-padding: 10;">
       <buttons>
-          <Button mnemonicParsing="false" onMouseClicked="#onConfirmClicked" text="Confirm" />
+          <Button mnemonicParsing="false" onMouseClicked="#onBackClicked" text="Back" />
+          <Button mnemonicParsing="false" onMouseClicked="#onConfirmClicked" text="Create" />
       </buttons>
     </ButtonBar>
 </VBox>

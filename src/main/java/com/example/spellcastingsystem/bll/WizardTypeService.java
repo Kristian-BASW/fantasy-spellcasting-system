@@ -23,6 +23,10 @@ public class WizardTypeService {
         return dao.getAll();
     }
 
+    /**
+     * Gets all names of WizardTypes
+     * @return
+     */
     public List<String> getNames() {
         var list = dao.getAll();
         return list.stream().map(x -> x.name).toList();
