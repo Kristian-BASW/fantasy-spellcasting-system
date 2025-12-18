@@ -15,8 +15,8 @@ public class WizardApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         checkDatabase();
-        FXMLLoader fxmlLoader = new FXMLLoader(WizardApplication.class.getResource("create-wizard-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        FXMLLoader fxmlLoader = new FXMLLoader(WizardApplication.class.getResource("wizard-start-page-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Big Wizard game");
         stage.setScene(scene);
         stage.show();

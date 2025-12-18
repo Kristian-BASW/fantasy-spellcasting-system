@@ -2,6 +2,7 @@ package com.example.spellcastingsystem.dal.implementation;
 
 import com.example.spellcastingsystem.be.WizardType;
 import com.example.spellcastingsystem.be.constants.DatabaseConstants;
+import com.example.spellcastingsystem.be.extenders.SQLQueryString;
 import com.example.spellcastingsystem.dal.ICrudDao;
 
 import java.sql.Connection;
@@ -15,7 +16,9 @@ import static java.lang.IO.println;
 public class WizardTypeDao implements ICrudDao<WizardType> {
 
     public WizardTypeDao() {
-//        mockList();
+        if(getAll().isEmpty()) {
+            mockList();
+        }
     }
 
     private void mockList(){
@@ -33,7 +36,7 @@ public class WizardTypeDao implements ICrudDao<WizardType> {
     public void add(WizardType item) {
         List<String> properties = new ArrayList<>();
         properties.add(WizardType.FieldNames.NAME);
-        String sqlCreate = DatabaseConstants.create(DatabaseConstants.WIZARD_TYPES_TABLE_NAME, properties);
+        String sqlCreate = SQLQueryString.create(DatabaseConstants.WIZARD_TYPES_TABLE_NAME, properties).toString();
         try (var con = DatabaseContext.getConnection()){
             assert con != null;
             try (PreparedStatement ps = con.prepareStatement(sqlCreate)) {
@@ -51,7 +54,7 @@ public class WizardTypeDao implements ICrudDao<WizardType> {
     public void update(WizardType item) {
         List<String> properties = new ArrayList<>();
         properties.add(WizardType.FieldNames.NAME);
-        String sqlUpdate = DatabaseConstants.updateById(DatabaseConstants.WIZARD_TYPES_TABLE_NAME, item.id, properties);
+        String sqlUpdate = SQLQueryString.updateById(DatabaseConstants.WIZARD_TYPES_TABLE_NAME, item.id, properties).toString();
 
         try (var conn = DatabaseContext.getConnection()) {
             assert conn != null;
@@ -80,7 +83,7 @@ public class WizardTypeDao implements ICrudDao<WizardType> {
             List<WizardType> wizardTypes = new ArrayList<>();
             Connection con = DatabaseContext.getConnection();
             assert con != null;
-            ResultSet rs = con.prepareStatement(DatabaseConstants.selectAll(DatabaseConstants.WIZARD_TYPES_TABLE_NAME)).executeQuery();
+            ResultSet rs = con.prepareStatement(SQLQueryString.selectAll(DatabaseConstants.WIZARD_TYPES_TABLE_NAME).toString()).executeQuery();
             while(rs.next()){
                 wizardTypes.add(WizardType.fromDb(rs));
             }
@@ -96,7 +99,7 @@ public class WizardTypeDao implements ICrudDao<WizardType> {
         try {
             Connection con = DatabaseContext.getConnection();
             assert con != null;
-            ResultSet rs = con.prepareStatement(DatabaseConstants.selectById(DatabaseConstants.WIZARD_TYPES_TABLE_NAME, id))
+            ResultSet rs = con.prepareStatement(SQLQueryString.selectById(DatabaseConstants.WIZARD_TYPES_TABLE_NAME, id).toString())
                     .executeQuery();
             rs.next();
             return WizardType.fromDb(rs);

@@ -2,12 +2,13 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.spellcastingsystem.presentation.controllers.WizardGameController">
+<SplitPane dividerPositions="0.29797979797979796, 0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.spellcastingsystem.presentation.controllers.WizardGameController">
   <items>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
-            <Label prefHeight="19.0" prefWidth="56.0" text="Wizards" />
+            <Label prefHeight="17.0" prefWidth="98.0" text="Other Wizards" />
             <TableView fx:id="wizardsTable" prefHeight="398.0" prefWidth="175.0">
               <columns>
                 <TableColumn fx:id="wizardNameColumn" prefWidth="75.0" text="Name" />
@@ -17,5 +18,15 @@
          </children>
       </VBox>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+      <VBox maxWidth="171.0" minHeight="100.0" minWidth="100.0" prefHeight="398.0" prefWidth="171.0">
+         <children>
+            <Label text="Your wizarding name">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelName" />
+            <Button mnemonicParsing="false" onMouseClicked="#logoutButtonClicked" text="Log out" />
+         </children></VBox>
   </items>
 </SplitPane>

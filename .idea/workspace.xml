@@ -5,22 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a699452-db3d-4fcc-a54c-d78d848a50a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/WizardViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/extenders/SQLQueryString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/controllers/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/controllers/WizardStartPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/models/holders/WizardHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/spellcastingsystem/login-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/spellcastingsystem/wizard-start-page-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/WizardApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/WizardApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Pool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Pool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Spell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/Wizard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/WizardType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/WizardType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/constants/DatabaseConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/be/constants/DatabaseConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/bll/WizardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/bll/WizardService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/bll/WizardTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/bll/WizardTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/dal/implementation/DatabaseContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/dal/implementation/DatabaseContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/dal/implementation/WizardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/dal/implementation/WizardDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/dal/implementation/WizardTypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/dal/implementation/WizardTypeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/controllers/WizardCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/controllers/WizardCreateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/controllers/WizardGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/controllers/WizardGameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/spellcastingsystem/create-wizard-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/spellcastingsystem/create-wizard-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/spellcastingsystem/wizard-game-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/spellcastingsystem/wizard-game-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/spellcastingsystem/create-wizard-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spellcastingsystem/create-wizard-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/spellcastingsystem/wizard-game-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/spellcastingsystem/wizard-game-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -60,7 +64,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "feat/view-all-wizards-in-a-list",
+    "git-widget-placeholder": "feat/creation-for-double-wizards-not-available",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/kristianurup/Projects/fantasy-spellcasting-system",
     "node.js.detected.package.eslint": "true",
@@ -122,7 +126,9 @@
       <workItem from="1764747105257" duration="4236000" />
       <workItem from="1764751422409" duration="6810000" />
       <workItem from="1764837345642" duration="35862000" />
-      <workItem from="1765875737827" duration="8227000" />
+      <workItem from="1765875737827" duration="28905000" />
+      <workItem from="1765980274426" duration="2262000" />
+      <workItem from="1766043358428" duration="4250000" />
     </task>
     <servers />
   </component>
@@ -149,9 +155,9 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/controllers/WizardGameController.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="25" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/spellcastingsystem/presentation/controllers/WizardCreateController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

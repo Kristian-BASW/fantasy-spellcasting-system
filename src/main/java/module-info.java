@@ -7,6 +7,7 @@ module com.example.spellcastingsystem {
     requires javafx.base;
     requires javafx.graphics;
     requires java.sql;
+    requires java.desktop;
 
     opens com.example.spellcastingsystem to javafx.fxml;
     exports com.example.spellcastingsystem;
